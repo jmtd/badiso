@@ -1,0 +1,16 @@
+Name:              badiso
+Version:           0.1
+Synopsis:          test ISO9660 files for bad blocks
+Author:            Jonathan Dowland <jon@dow.land>
+Maintainer:        Jonathan Dowland <jon@dow.land>
+Homepage:          https://jmtd.net/software/badiso/
+License:           GPL-2
+License-file:      LICENSE
+Cabal-Version:     >= 1.2
+Stability:         Alpha
+Category:          System
+build-type:        Simple
+Executable Test
+  Main-is:         ddrescueprint.hs
+  Build-Depends:   base >= 2.0,
+                   parsec >= 2.1.0.1, HTF >= 0.13.1.0
