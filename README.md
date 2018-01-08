@@ -38,7 +38,7 @@ Remove dependency on an external ISO9660 tool (xorriso, isoinfo, etc.)
 
 Configurable output (optional colour); filtering (show only good/bad files)
 
-Rewrite in Haskell.
+Rewrite in Haskell (or Idris)
 
 ## See also
 
@@ -48,6 +48,6 @@ Rewrite in Haskell.
 
 ## Author
 
-Jonathan Dowland
-<jon@dow.land>
-<https://jmtd.net/>
+ * Jonathan Dowland
+ * <jon@dow.land>
+ * <https://jmtd.net/>
