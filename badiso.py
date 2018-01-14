@@ -100,7 +100,11 @@ def markup_xorriso_output():
         bits = line.split(",")
         startlba = bits[1].strip()
         fsize = bits[3].strip()
-        fname = ",".join(bits[4:])[2:-3] # strips leading " '" and trailing ";?'" (version)
+        # strips leading/trailing '
+        fname = ",".join(bits[4:])[2:-1]
+        # strip possible version suffix
+        if re.match(r'.*;[0-9]$', fname):
+            fname = fname[:-2]
         check_file_status(int(fsize), int(startlba), fname)
 
 markup_xorriso_output()
