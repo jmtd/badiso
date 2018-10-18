@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+#!/usr/bin/python3
 
 # proof-of-concept markupper on top of an ISO list tool
 
@@ -89,13 +88,14 @@ def markup_isoinfo_output():
 
 def build_xorriso_cmd(iso):
     return ['xorriso', '-read_fs', 'norock', '-indev', iso, '-find', '.', '-exec', 'report_lba']
+    # XXX: -error_behavior best_effort -abort_on NEVER ?
 
 def markup_xorriso_output():
     """Extract a file list from the ISO via xorriso(1) and check each file's
        status from the ddrescue map."""
     output = subprocess.Popen(build_xorriso_cmd(iso), stdout=subprocess.PIPE).communicate()[0]
-    for line in output.splitlines():
-        if not re.match(r'^File data lba', line): # XXX not python3 compatible
+    for line in output.decode(encoding='UTF-8').splitlines():
+        if not re.match(r'^File data lba', line):
             continue
         bits = line.split(",")
         startlba = bits[1].strip()
