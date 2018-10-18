@@ -22,6 +22,8 @@ GNU ddrescue map file corresponding to the image.
 
 ## Dependencies
 
+badiso is written in Python 3.
+
 You need a GNU ddrescue map file for every ISO9660 image you wish to inspect.
 
 badiso currently depends upon xorriso to work. There is some code to use
